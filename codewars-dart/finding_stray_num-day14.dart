@@ -12,5 +12,6 @@ stray(List<int> numbers) {
 
 void main() {
   print(stray([1, 1, 2]));
+  print(2 ^ 3);
   stray([1, 1, 2]);
 }
