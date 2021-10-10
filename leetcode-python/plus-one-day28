@@ -1,0 +1,10 @@
+from _typeshed import Self
+from typing import List
+
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        digits[-1] = digits[-1]+1
+        print(digits[-1]+1)
+
+Solution().plusOne(digits=[1,2,3])
