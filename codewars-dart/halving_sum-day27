@@ -1,0 +1,15 @@
+int halvingSum(int n) {
+    
+    var newList = [];
+    var backup = n;
+    while (backup > 1) {
+      newList.add((backup/2).round());
+      backup = (backup/2).round();
+      
+    }
+    print(newList.reduce((v,e)=>v+e));
+}
+
+void main(){
+  halvingSum
+}
