@@ -3,14 +3,14 @@ String jumpingNumber(int n) {
   if (number.length == 1) {
     return "Jumping!!";
   } else {
-    bool flag = true;
+    List flag = [];
     for (var i = 0; i < number.length - 1; i++) {
       if ((int.parse(number[i]) - int.parse(number[i + 1])).abs() == 1) {
-        flag = true;
+        flag.add("true");
       } else {
-        flag = false;
+        flag.add("false");
       }
     }
-    return flag ? "Jumping!!" : "Not!!";
+    return flag.every((element) => element == "true") ? "Jumping!!" : "Not!!";
   }
 }
