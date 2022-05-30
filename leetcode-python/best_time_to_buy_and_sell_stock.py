@@ -1,21 +1,17 @@
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        next_day_prices = list(prices)
-        profits = []
-        for i in prices:
-            
-            current_price = i
-            difference = 0
-            next_day_prices.remove(current_price)
-            
-            for j in next_day_prices:
-                diff = j -i
-                if(difference < diff):
-                    difference = diff
-            
-            profits.append(difference)
-      
-        return max(profits)
-            
+    def maxProfit(self,prices):
+        left = 0 #Buy
+        right = 1 #Sell
+        max_profit = 0
+        while right < len(prices):
+            if prices[right] < prices[left]:
+                left = right
                 
-            
+            else:
+                current_profit = prices[right] - prices[left]
+                if max_profit < current_profit:
+                    max_profit = current_profit
+            right += 1
+                    
+        return max_profit
+                
